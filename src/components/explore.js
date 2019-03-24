@@ -93,10 +93,7 @@ class Explore extends Component {
                         {json.map((item, index) => {
                         return (
                             <MyCard key={index}
-                                image={item.photo}
-                                title={item.name} 
-                                subtitle={item.location}
-                                text={item.description}
+                                {...item}
                             />
                             )
                         })}

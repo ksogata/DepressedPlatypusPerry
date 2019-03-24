@@ -16,19 +16,21 @@ class MyCard extends Component {
     }
 
     render() {
+        const {description, eventtags, host, location, name, photo, state, users, zipcode} = this.props;
         return (
             <Col sm={4}>
                 <Card>
-                    <CardImg top width="100%" src={this.props.image} alt="Card image cap" />
+                    <CardImg top width="100%" src={photo} alt="Card image cap" />
                     <CardBody>
-                        <CardTitle>{this.props.title}</CardTitle>
-                        <CardSubtitle>{this.props.subtitle}</CardSubtitle>
-                        <CardText>{this.props.text}</CardText>
+                        <CardTitle>{name}</CardTitle>
+                        <CardSubtitle>{location}</CardSubtitle>
+                        <CardText>{description}</CardText>
                     <Button onClick={this.toggle}>Button</Button>
                     <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>{name}</ModalHeader>
                     <ModalBody>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        {description} {eventtags} {host} {location} {state} {zipcode} {users}
+                        <img src={photo} />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
