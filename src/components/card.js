@@ -33,7 +33,7 @@ class MyCard extends Component {
                         <CardSubtitle>{location}</CardSubtitle>
                         {this.renderTags(eventtags)}
                         <CardText>{description}</CardText>
-                    <Button onClick={this.toggle}>Button</Button>
+                    <Button onClick={this.toggle}>View Details</Button>
                     <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>{name}</ModalHeader>
                     <ModalBody>
@@ -41,7 +41,7 @@ class MyCard extends Component {
                         <img src={photo} />
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
+                        <Button color="primary" onClick={this.toggle}>Join</Button>{' '}
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
                     </Modal>
