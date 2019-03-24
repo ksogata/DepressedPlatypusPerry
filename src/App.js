@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link, Route, Switch, NavLink } from "react-router-dom";
-import { Container, Row, Col, Nav, NavItem } from 'reactstrap';
+import { Route, Switch, NavLink } from "react-router-dom";
+import { Nav, NavItem } from 'reactstrap';
 import Explore from './components/explore';
 import About from './components/about';
 import Experience from './components/experience';
@@ -19,10 +19,6 @@ const styles = {
 }
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>
