@@ -33,7 +33,7 @@ class App extends Component {
             <NavLink to='/experience' activeClassName='active' className='nav-link'>Host an Experience</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to='/my-experiences' activeClassName='active' className='nav-link'>My Experiences</NavLink>
+            <NavLink to='/my-experiences' activeClassName='active' className='nav-link'>My Journey</NavLink>
           </NavItem>
           <NavItem>
             <NavLink to='/about' activeClassName='active' className='nav-link'>About</NavLink>
