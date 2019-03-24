@@ -7,7 +7,7 @@ const styles = {
       float: 'left',
       width: '20%',
       height: '100vh',
-      'padding-right': '20px'
+      paddingRight: '20px'
     },
     banner: {
       background: "url('spring-4072393_1920.jpg')"

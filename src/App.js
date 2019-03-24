@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link, Route } from "react-router-dom";
-import { Container, Row, Col, Nav, NavItem, NavLink } from 'reactstrap';
+import { Link, Route, Switch, NavLink } from "react-router-dom";
+import { Container, Row, Col, Nav, NavItem } from 'reactstrap';
 import Login from './components/login';
 import Explore from './components/explore';
 import About from './components/about';
@@ -22,23 +22,24 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Nav tabs>
+        <Nav pills>
           <NavItem>
-            <NavLink href="/explore">Explore Experiences</NavLink>
+            <NavLink to='/explore' activeClassName='active' className='nav-link'>Explore Experiences</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/experience">Add an Experience</NavLink>
+            <NavLink to='/experience' activeClassName='active' className='nav-link'>Add an Experience</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/about">About</NavLink>
+            <NavLink to='/about' activeClassName='active' className='nav-link'>About</NavLink>
           </NavItem>
         </Nav>
-        
-        
-        <Route path="/explore" component={Explore} />
-        <Route path="/about" component={About} />
-        <Route path="/experience" component={Experience} />
-        
+
+        <Switch>
+          <Route path="/explore" component={Explore} />
+          <Route path="/experience" component={Experience} />
+          <Route path="/about" component={About} />
+        </Switch>
+
         {/* <Login></Login> */}
       </div>
     );
