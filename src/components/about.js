@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { isAbsolute } from 'path';
 
-export default class Dashboard extends Component {
-    render() {
-        return (
-            <div>
-                About page
-            </div>
-        )
-    }
+const About = () => {
+    return (
+        <div>
+            About page
+        </div>
+    )
 };
+
+export default About;

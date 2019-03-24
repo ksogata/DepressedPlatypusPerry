@@ -33,6 +33,7 @@ export default class Login extends Component {
                 block
                 bsSize="large"
                 // disabled={!this.validateForm()}
+                onClick={this.props.login}
                 type="submit"
               >
                 Login
