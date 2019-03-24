@@ -1,10 +1,9 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText, Row, Col } from 'reactstrap';
-import { TextInput } from './helper';
+import { Container, Button, Form, FormGroup, Label, Input, FormText, Row, Col } from 'reactstrap';
 
 const Experience = () => {
     return (
-        <div>
+        <Container>
             <h1>Add an Experience</h1>
             <Form>
                 <FormGroup>
@@ -59,7 +58,7 @@ const Experience = () => {
                 </Row>
                 <Button>Submit</Button>
             </Form>
-        </div>
+        </Container>
     )
 };
 

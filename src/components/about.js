@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { isAbsolute } from 'path';
+import { Container } from 'reactstrap';
 
 const About = () => {
     return (
-        <div>
-            About page
-        </div>
+      <Container>
+        <h1>About</h1>
+        <p></p>
+      </Container>
     )
 };
 

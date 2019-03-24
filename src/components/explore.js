@@ -14,9 +14,9 @@ const styles = {
 const Explore = () => {
     return (
       <Container>
+        <h1>Explore Experiences</h1>
         <Row>
           <Col>
-            <br/>
             <InputGroup>
               <InputGroupAddon addonType="prepend">
                 <InputGroupText>What are you interested in?</InputGroupText>
