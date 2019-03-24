@@ -1,9 +1,12 @@
 import React from 'react';
-import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import { Container, Row, Col, Button, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const styles = {
     banner: {
       background: "url('spring-4072393_1920.jpg')"
+    },
+    missedcard: {
+      background: 'lightgoldenrodyellow'
     }
 }
 
@@ -25,17 +28,25 @@ const MyExperiences = () => {
               <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
               <CardBody>
                 <CardTitle>Baseball at the park</CardTitle>
-                <CardSubtitle> Moment from2 weeks ago </CardSubtitle>
+                <CardSubtitle> Moment from 2 weeks ago </CardSubtitle>
                 <CardText>Foothil Park</CardText>
               </CardBody>
             </Card>
           </Col>
           <Col>
             <Card>
-              <CardBody>
-                <CardTitle>Today: Hey, we missed you yesterday at "Movie night"</CardTitle>
-                <CardSubtitle> Let us know if you're feeling okay </CardSubtitle>
-                <CardText>Posted 4 hours ago: I was feeling a lot of anxiety about going to the movie theater</CardText>
+              <CardBody style={ styles.missedcard }>
+                <CardTitle><p><em>Today: Hey, we missed you yesterday at "Movie Night"</em></p></CardTitle>
+                <CardSubtitle><p><em>Let us know if you're feeling okay.</em></p><br/></CardSubtitle>
+                <CardText>
+                  <p><em>Posted 4 hours ago:</em> I was feeling a lot of anxiety about going to the movie theater</p><br/>
+                  <Form>
+                    <FormGroup>
+                      <Input type="textarea" name="description" id="description" />
+                    </FormGroup>
+                    <Button color="primary">Add a note</Button><br/>
+                  </Form>
+                </CardText>
               </CardBody>
             </Card>
           </Col>
