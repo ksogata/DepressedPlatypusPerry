@@ -29,7 +29,7 @@ const MyExperiences = () => {
               <CardBody>
                 <CardTitle>Baseball at the park</CardTitle>
                 <CardSubtitle> Moment from 2 weeks ago </CardSubtitle>
-                <CardText>Foothil Park</CardText>
+                <CardText>Foothill Park</CardText>
               </CardBody>
             </Card>
           </Col>

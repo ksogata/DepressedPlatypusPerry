@@ -168,13 +168,13 @@ class Experience extends Component {
                 onClick={this.onClick}
             >
                 Submit
-            </Button><br/>
+            </Button><br/><br/>
           </Col>
         </Row>
       </Container>
     </div>
     )
-    }
+  }
 };
 
 export default Experience;
