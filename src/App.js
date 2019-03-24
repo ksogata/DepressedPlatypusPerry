@@ -5,6 +5,7 @@ import Login from './components/login';
 import Explore from './components/explore';
 import About from './components/about';
 import Experience from './components/experience';
+import MyExperiences from './components/my-experiences';
 import './App.css';
 
 class App extends Component {
@@ -30,6 +31,9 @@ class App extends Component {
             <NavLink to='/experience' activeClassName='active' className='nav-link'>Add an Experience</NavLink>
           </NavItem>
           <NavItem>
+            <NavLink to='/my-experiences' activeClassName='active' className='nav-link'>My Experiences</NavLink>
+          </NavItem>
+          <NavItem>
             <NavLink to='/about' activeClassName='active' className='nav-link'>About</NavLink>
           </NavItem>
         </Nav>
@@ -37,6 +41,7 @@ class App extends Component {
         <Switch>
           <Route path="/explore" component={Explore} />
           <Route path="/experience" component={Experience} />
+          <Route path="/my-experiences" component={MyExperiences} />
           <Route path="/about" component={About} />
         </Switch>
 
