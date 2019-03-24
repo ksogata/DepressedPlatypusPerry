@@ -30,7 +30,7 @@ class Experience extends Component {
     render() {
     return (
       <div>
-        <h1 style={styles.banner}>Add an Experience</h1>
+        <h1 style={styles.banner}>Host an Experience</h1>
         <Container>
           <Row>
             <Col>
