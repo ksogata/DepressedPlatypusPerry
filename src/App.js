@@ -21,13 +21,13 @@ class App extends Component {
 
   render() {
     return (
-      <Container>
+      <div>
         <Nav tabs>
           <NavItem>
             <NavLink href="/explore">Explore Experiences</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/experience">Add An Experience</NavLink>
+            <NavLink href="/experience">Add an Experience</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="/about">About</NavLink>
@@ -40,7 +40,7 @@ class App extends Component {
         <Route path="/experience" component={Experience} />
         
         {/* <Login></Login> */}
-      </Container>
+      </div>
     );
   }
 }

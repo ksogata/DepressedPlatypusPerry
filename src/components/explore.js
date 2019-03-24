@@ -9,12 +9,16 @@ const styles = {
       height: '100vh',
       'padding-right': '20px'
     },
+    banner: {
+      background: "url('spring-4072393_1920.jpg')"
+    }
 }
 
 const Explore = () => {
     return (
+      <div>
+      <h1 style={styles.banner}>Explore Experiences</h1>
       <Container>
-        <h1>Explore Experiences</h1>
         <Row>
           <Col>
             <InputGroup>
@@ -59,7 +63,7 @@ const Explore = () => {
                 <CardTitle>Card title</CardTitle>
                 <CardSubtitle>Card subtitle</CardSubtitle>
                 <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
+                <Button color="primary">View Details</Button>
               </CardBody>
             </Card>
           </Col>
@@ -70,7 +74,7 @@ const Explore = () => {
                 <CardTitle>Card title</CardTitle>
                 <CardSubtitle>Card subtitle</CardSubtitle>
                 <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
+                <Button color="primary">View Details</Button>
               </CardBody>
             </Card>
           </Col>
@@ -81,7 +85,7 @@ const Explore = () => {
                 <CardTitle>Card title</CardTitle>
                 <CardSubtitle>Card subtitle</CardSubtitle>
                 <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
+                <Button color="primary">View Details</Button>
               </CardBody>
             </Card>
           </Col>
@@ -95,7 +99,7 @@ const Explore = () => {
                 <CardTitle>Card title</CardTitle>
                 <CardSubtitle>Card subtitle</CardSubtitle>
                 <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
+                <Button color="primary">View Details</Button>
               </CardBody>
             </Card>
           </Col>
@@ -106,7 +110,7 @@ const Explore = () => {
                 <CardTitle>Card title</CardTitle>
                 <CardSubtitle>Card subtitle</CardSubtitle>
                 <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
+                <Button color="primary">View Details</Button>
               </CardBody>
             </Card>
           </Col>
@@ -117,13 +121,14 @@ const Explore = () => {
                 <CardTitle>Card title</CardTitle>
                 <CardSubtitle>Card subtitle</CardSubtitle>
                 <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
+                <Button color="primary">View Details</Button>
               </CardBody>
             </Card>
           </Col>
         </Row>
         <br/>
       </Container>
+      </div>
     );
 };
 

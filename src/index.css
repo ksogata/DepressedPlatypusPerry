@@ -14,5 +14,10 @@ code {
 }
 
 h1 {
-  margin: 40px 0 20px 0;
+  padding: 60px 10% 20px 10%;
+  margin-bottom: 30px;
+}
+
+.nav {
+  padding: 0 10%;
 }
