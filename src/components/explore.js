@@ -10,66 +10,10 @@ const styles = {
       height: '100vh',
       paddingRight: '20px'
     },
+    banner: {
+      background: "url('spring-4072393_1920.jpg')"
+    }
 }
-
-const jsons = [
-    [{
-        "name": "Baseball",
-        "description": "Baseball in the park!",
-        "location": "Foothill Park",
-        "zipCode": "94521",
-        "state": "CA",
-        "eventTags": [
-            "baseball",
-            "sports",
-            "outdoors"
-        ],
-        "host": "sparakala",
-        "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
-    },
-    {
-        "name": "Hiking",
-        "description": "Sunny afternoon hike!",
-        "location": "Iron horse trail",
-        "zipCode": "95035",
-        "state": "CA",
-        "eventTags": [
-            "hiking",
-            "trails",
-            "outdoors"
-        ],
-        "host": "aliu",
-        "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
-    },
-    {
-        "name": "Hiking",
-        "description": "Sunny afternoon hike!",
-        "location": "Iron horse trail",
-        "zipCode": "95035",
-        "state": "CA",
-        "eventTags": [
-            "hiking",
-            "trails",
-            "outdoors"
-        ],
-        "host": "aliu",
-        "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
-    }],
-    [{
-        "name": "Hiking",
-        "description": "Sunny afternoon hike!",
-        "location": "Iron horse trail",
-        "zipCode": "95035",
-        "state": "CA",
-        "eventTags": [
-            "hiking",
-            "trails",
-            "outdoors"
-        ],
-        "host": "aliu",
-        "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
-    }]
-];
 
 class Explore extends Component {
     constructor(props) {

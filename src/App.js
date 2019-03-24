@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, Route } from "react-router-dom";
+import { Link, Route, Switch, NavLink } from "react-router-dom";
 import { Container, Row, Col, Nav, NavItem } from 'reactstrap';
 import Explore from './components/explore';
 import About from './components/about';
@@ -9,36 +9,31 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isLoggedIn: false
-    }
-  }
-
-  login = () => {
-    this.setState({isLoggedIn: true});
   }
 
   render() {
     return (
-      <Container>
-        <Nav tabs>
+      <div>
+        <Nav pills>
           <NavItem>
-            <NavLink to="/explore">Explore Experiences</NavLink>
+            <NavLink to='/explore' activeClassName='active' className='nav-link'>Explore Experiences</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/experience">Add An Experience</NavLink>
+            <NavLink to='/experience' activeClassName='active' className='nav-link'>Add an Experience</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to='/about' activeClassName='active' className='nav-link'>About</NavLink>
           </NavItem>
         </Nav>
-        
-        
-        <Route path="/explore" component={Explore} />
-        <Route path="/about" component={About} />
-        <Route path="/experience" component={Experience} />
-        
-      </Container>
+
+        <Switch>
+          <Route path="/explore" component={Explore} />
+          <Route path="/experience" component={Experience} />
+          <Route path="/about" component={About} />
+        </Switch>
+
+        {/* <Login></Login> */}
+      </div>
     );
   }
 }
