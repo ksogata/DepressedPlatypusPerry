@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Container, Row, Col, InputGroup, InputGroupText, InputGroupAddon, Input, Form, FormGroup, Label, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Container, Row, Col, InputGroup, InputGroupText, InputGroupAddon, Input, Form, FormGroup, Label } from 'reactstrap';
 import MyCard from "./card";
 
 const styles = {
@@ -26,10 +26,23 @@ class Explore extends Component {
     componentDidMount() {
         axios.get('http://localhost:5000/api/getAllData')
             .then(res => {
+                const data = res.data.result;
+                console.log(data);
+                this.setState({data});
+            }) 
+    }
+
+    handleChange = (e) => {
+        axios.get('http://localhost:5000/api/getSearchResult', {
+            params: {
+                name: e.target.value
+            }
+        })
+            .then(res => {
                 console.log(res.data.result);
                 const data = res.data.result;
                 this.setState({data});
-            }) 
+            })
     }
     
     render() {
@@ -43,7 +56,7 @@ class Explore extends Component {
                 <InputGroupAddon addonType="prepend">
                     <InputGroupText>What are you interested in?</InputGroupText>
                 </InputGroupAddon>
-                <Input />
+                <Input onChange={this.handleChange}/>
                 </InputGroup>
                 <br/>
             </Col>
