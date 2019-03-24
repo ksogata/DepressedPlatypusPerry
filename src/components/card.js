@@ -16,10 +16,11 @@ class MyCard extends Component {
     }
 
     renderTags = (tags) => {
-        return tags.map( (tag, index) =>
+        console.log(tags);
 
-           ( <span className="tags" key={index}> <Badge color="primary">{tag}</Badge> </span>)
-            );
+        return tags.map( (tag, index) => (
+           <span className="tags" key={index}> <Badge color="primary">{tag}</Badge> </span>)
+        );
     }
 
     render() {
