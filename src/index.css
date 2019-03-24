@@ -21,3 +21,18 @@ h1 {
 .nav {
   padding: 10px 10%;
 }
+
+.card {
+  margin: 20px 0;
+}
+.card img {
+  height: 150px;
+}
+
+.card-body {
+  min-height: 200px;
+}
+
+.modal-body img {
+  width: 100%;
+}
