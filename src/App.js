@@ -24,13 +24,13 @@ class App extends Component {
       <Container>
         <Nav tabs>
           <NavItem>
-            <NavLink href="/explore">Explore</NavLink>
+            <NavLink href="/explore">Explore Experiences</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/experience">Add An Experience</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="/about">About</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/experience">Experience</NavLink>
           </NavItem>
         </Nav>
         
