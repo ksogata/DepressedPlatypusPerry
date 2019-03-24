@@ -23,7 +23,7 @@ const About = () => {
           </Row>
           <Row>
             <Col md={{ size: 7, offset: 3 }}>
-              <p style={styles.about}>[app name here] is designed to help connect people who share similar interests, with a focus on mental health and providing that human connection with others who may have experienced similar situations.</p>
+              <p style={styles.about}>Journey is designed to help connect people who share similar interests, with a focus on mental health and providing that human connection with others who may have experienced similar situations.</p>
               <p style={styles.about}>We hope that through encouraging people to go out and do activities with other like-minded individuals, this will help increase meaningful social interactions and have a positive influence on people who may be struggling with isolation and loneliness.</p><br/>
             </Col>
           </Row>
