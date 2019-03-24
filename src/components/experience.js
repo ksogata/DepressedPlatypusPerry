@@ -18,14 +18,14 @@ class Experience extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            expName: '',
+            name: '',
             description: '',
-            address: '',
+            address1: '',
             address2: '',
             city: '',
             state: '',
             zip: '',
-            tags: '',
+            eventtags: '',
             capacity: ''
         }
     }
@@ -34,14 +34,14 @@ class Experience extends Component {
         this.setState({[e.target.name]: e.target.value});
     }
 
-    addTags = (newValue: any, actionMeta: any) => {
+    addTags = (newValue, actionMeta) => {
       console.group('Value Changed');
       console.log(newValue);
       var transformed  = newValue.map(element => {
         return {[element.value]: element.label}
       })
       console.log("tags", transformed)
-      this.setState({"tags": transformed})
+      this.setState({"eventtags": transformed})
     };
     
     render() {
@@ -54,7 +54,7 @@ class Experience extends Component {
               <Form>
               <FormGroup>
                 <Label for="expName">Experience Name</Label>
-                <Input onChange={this.handleChange} type="expName" name="expName" id="expName" value={this.state.expName}/>
+                <Input onChange={this.handleChange} type="expName" name="expName" id="expName" value={this.state.name}/>
               </FormGroup>
               <FormGroup>
                 <Label for="description">Description</Label>
@@ -84,7 +84,7 @@ class Experience extends Component {
               <Form>
               <FormGroup>
                 <Label for="address">Address</Label>
-              <Input onChange={this.handleChange} type="text" name="address" id="address" placeholder="1234 Main St" value={this.state.address}/>
+              <Input onChange={this.handleChange} type="text" name="address" id="address" placeholder="1234 Main St" value={this.state.address1}/>
               </FormGroup>
               <FormGroup>
                 <Label for="address2">Address 2</Label>
