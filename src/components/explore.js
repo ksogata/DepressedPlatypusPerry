@@ -56,33 +56,30 @@ class Explore extends Component {
                 <InputGroupAddon addonType="prepend">
                     <InputGroupText>What are you interested in?</InputGroupText>
                 </InputGroupAddon>
-                <Input onChange={this.handleChange}/>
+                <Input onChange={this.handleChange} placeholder='Try "baseball"'/>
                 </InputGroup>
                 <br/>
             </Col>
             </Row>
             <div style={styles.filter}>
-            Filters
-            <br/><br/>
+            <p><strong>Filters</strong></p>
             <Form>
                 <FormGroup>
-                <Label for="exampleSelect">Select</Label>
+                <Label for="exampleSelect">Distance</Label>
                 <Input type="select" name="select" id="exampleSelect">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option>Walking (1 mi.)</option>
+                    <option>Biking (2 mi.)</option>
+                    <option>Driving (5+ mi.)</option>
                 </Input>
                 </FormGroup>
                 <FormGroup>
-                <Label for="exampleSelectMulti">Select Multiple</Label>
+                <Label for="exampleSelectMulti">Areas of Interest</Label>
                 <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                  <option>Animals</option>
+                  <option>Art</option>
+                  <option>Music</option>
+                  <option>Nature</option>
+                  <option>Sports</option>
                 </Input>
                 </FormGroup>
             </Form>
