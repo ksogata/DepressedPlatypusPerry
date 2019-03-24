@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button, Modal, ModalHeader, ModalBody, ModalFooter  } from 'reactstrap';
+import { Col, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button, Badge, Modal, ModalHeader, ModalBody, ModalFooter  } from 'reactstrap';
 
 class MyCard extends Component {
     constructor(props) {
@@ -15,6 +15,13 @@ class MyCard extends Component {
         }));
     }
 
+    renderTags = (tags) => {
+        return tags.map( (tag, index) =>
+
+           ( <span className="tags" key={index}> <Badge color="primary">{tag}</Badge> </span>)
+            );
+    }
+
     render() {
         const {description, eventtags, host, location, name, photo, state, users, zipcode} = this.props;
         return (
@@ -24,6 +31,7 @@ class MyCard extends Component {
                     <CardBody>
                         <CardTitle>{name}</CardTitle>
                         <CardSubtitle>{location}</CardSubtitle>
+                        {this.renderTags(eventtags)}
                         <CardText>{description}</CardText>
                     <Button onClick={this.toggle}>Button</Button>
                     <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
@@ -43,5 +51,8 @@ class MyCard extends Component {
         )
     }
 }
+MyCard.defaultProps = {
+  eventtags: []
+};
 
 export default MyCard;

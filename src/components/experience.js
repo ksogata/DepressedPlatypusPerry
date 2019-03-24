@@ -38,7 +38,7 @@ class Experience extends Component {
       console.group('Value Changed');
       console.log(newValue);
       var transformed  = newValue.map(element => {
-        return {[element.value]: element.label}
+        return element.label;
       })
       console.log("tags", transformed)
       this.setState({"tags": transformed})

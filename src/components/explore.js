@@ -91,6 +91,7 @@ class Explore extends Component {
                 return(
                     <Row key={i}>
                         {json.map((item, index) => {
+                            console.log("item", item)
                         return (
                             <MyCard key={index}
                                 {...item}
