@@ -39,9 +39,10 @@ class Experience extends Component {
 
     onClick  = (e) => {
         e.preventDefault();
-        console.log(this.state);
-        console.log(decodeURI(qs.stringify(this.state)));
-        let tags = JSON.stringify(this.state.eventtags);
+        // console.log(this.state);
+        // console.log(decodeURI(qs.stringify(this.state)));
+        // let tags = JSON.stringify(this.state.eventtags);
+        let tags = this.state.eventtags.join(',');
         let {experience_name, desc, addr1, addr2, city, state, zip, capacity} = this.state;
         let body = qs.stringify({
             experience_name,
@@ -54,7 +55,6 @@ class Experience extends Component {
             capacity,
             eventtags: tags
         })
-        
         axios.post("http://localhost:5000/api/event", body, {headers})
             .then((res) => {
                 console.log(res);
