@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route, Switch, NavLink } from "react-router-dom";
+import { Link, Switch, Route, Redirect, NavLink } from "react-router-dom";
 import { Container, Row, Col, Nav, NavItem } from 'reactstrap';
 import Explore from './components/explore';
 import About from './components/about';
@@ -45,6 +45,13 @@ class App extends Component {
         </Nav>
 
         <Switch>
+          <Route exact path="/" render={() => (
+            /*loggedIn ? (
+              <Redirect to="/login"/>
+            ) : (*/
+              <Redirect to="/explore" />
+            //)
+          )}/>
           <Route path="/explore" component={Explore} />
           <Route path="/experience" component={Experience} />
           <Route path="/my-experiences" component={MyExperiences} />
