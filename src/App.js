@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Route, Switch, NavLink } from "react-router-dom";
-import { Nav, NavItem } from 'reactstrap';
+import { Link, Switch, Route, Redirect, NavLink } from "react-router-dom";
+import { Container, Row, Col, Nav, NavItem } from 'reactstrap';
 import Explore from './components/explore';
 import About from './components/about';
 import Experience from './components/experience';
@@ -41,6 +41,13 @@ class App extends Component {
         </Nav>
 
         <Switch>
+          <Route exact path="/" render={() => (
+            /*loggedIn ? (
+              <Redirect to="/login"/>
+            ) : (*/
+              <Redirect to="/explore" />
+            //)
+          )}/>
           <Route path="/explore" component={Explore} />
           <Route path="/experience" component={Experience} />
           <Route path="/my-experiences" component={MyExperiences} />

@@ -1,11 +1,18 @@
 import React, {Component} from 'react';
-import { Container, Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import CreatableSelect from 'react-select/lib/Creatable';
+import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const styles = {
     banner: {
       background: "url('spring-4072393_1920.jpg')"
     }
 }
+
+const labelOptions = [
+  { value: 't01', label: 'Anxiety' },
+  { value: 't02', label: 'Stress' },
+  { value: 't03', label: 'Netowrking' }
+];
 
 class Experience extends Component {
     constructor(props) {
@@ -26,6 +33,16 @@ class Experience extends Component {
     handleChange = (e) => {
         this.setState({[e.target.name]: e.target.value});
     }
+
+    addTags = (newValue: any, actionMeta: any) => {
+      console.group('Value Changed');
+      console.log(newValue);
+      var transformed  = newValue.map(element => {
+        return {[element.value]: element.label}
+      })
+      console.log("tags", transformed)
+      this.setState({"tags": transformed})
+    };
     
     render() {
     return (
@@ -48,7 +65,11 @@ class Experience extends Component {
                 <Col md={10}>
                   <FormGroup>
                   <Label for="tags">Tags</Label>
-                  <Input onChange={this.handleChange} type="text" name="tags" id="tags" value={this.state.tags}/>
+                  <CreatableSelect
+                    isMulti
+                    onChange={this.addTags}
+                    options={labelOptions}
+                  />
                 </FormGroup>
                 </Col>
                 <Col md={2}>
