@@ -18,6 +18,11 @@ h1 {
   margin-bottom: 30px;
 }
 
+header {
+  width: 100%;
+  background: #92c8d4;
+}
+
 .nav {
   padding: 10px 10%;
 }

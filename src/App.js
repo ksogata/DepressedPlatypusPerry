@@ -22,6 +22,9 @@ class App extends Component {
   render() {
     return (
       <div>
+        <header>
+          <img src="logo.jpg"/>
+        </header>
         <Nav pills>
           <NavItem>
             <NavLink to='/explore' activeClassName='active' className='nav-link'>Explore Experiences</NavLink>
