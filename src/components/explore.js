@@ -34,8 +34,9 @@ class Explore extends Component {
     
     render() {
         return (
+        <>
+        <h1 style={styles.banner}>Explore Experiences</h1>
         <Container>
-            <h1>Explore Experiences</h1>
             <Row>
             <Col>
                 <InputGroup>
@@ -90,6 +91,7 @@ class Explore extends Component {
                 )
             })}
         </Container>
+        </>
         );
     }
 };
