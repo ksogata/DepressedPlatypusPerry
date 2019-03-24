@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link, Route } from "react-router-dom";
-import { Container, Row, Col, Nav, NavItem, NavLink } from 'reactstrap';
-import Login from './components/login';
+import { NavLink, Route } from "react-router-dom";
+import { Container, Row, Col, Nav, NavItem } from 'reactstrap';
 import Explore from './components/explore';
 import About from './components/about';
 import Experience from './components/experience';
@@ -24,13 +23,13 @@ class App extends Component {
       <Container>
         <Nav tabs>
           <NavItem>
-            <NavLink href="/explore">Explore Experiences</NavLink>
+            <NavLink to="/explore">Explore Experiences</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/experience">Add An Experience</NavLink>
+            <NavLink to="/experience">Add An Experience</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/about">About</NavLink>
+            <NavLink to="/about">About</NavLink>
           </NavItem>
         </Nav>
         
@@ -39,7 +38,6 @@ class App extends Component {
         <Route path="/about" component={About} />
         <Route path="/experience" component={Experience} />
         
-        {/* <Login></Login> */}
       </Container>
     );
   }

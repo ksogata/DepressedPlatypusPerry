@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { isAbsolute } from 'path';
 import { Container } from 'reactstrap';
 
 const About = () => {

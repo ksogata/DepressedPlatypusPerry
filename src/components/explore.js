@@ -1,130 +1,153 @@
 import React, { Component } from 'react';
-import { Link, Route } from "react-router-dom";
+import axios from 'axios';
 import { Container, Row, Col, InputGroup, InputGroupText, InputGroupAddon, Input, Form, FormGroup, Label, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import MyCard from "./card";
 
 const styles = {
     filter: {
       float: 'left',
       width: '20%',
       height: '100vh',
-      'padding-right': '20px'
+      paddingRight: '20px'
     },
 }
 
-const Explore = () => {
-    return (
-      <Container>
-        <h1>Explore Experiences</h1>
-        <Row>
-          <Col>
-            <InputGroup>
-              <InputGroupAddon addonType="prepend">
-                <InputGroupText>What are you interested in?</InputGroupText>
-              </InputGroupAddon>
-            <Input />
-            </InputGroup>
-            <br/>
-          </Col>
-        </Row>
-        <div style={styles.filter}>
-          Filters<br/><br/>
-          <Form>
-            <FormGroup>
-              <Label for="exampleSelect">Select</Label>
-              <Input type="select" name="select" id="exampleSelect">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </Input>
-            </FormGroup>
-            <FormGroup>
-              <Label for="exampleSelectMulti">Select Multiple</Label>
-              <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </Input>
-            </FormGroup>
-          </Form>
-        </div>
-        <Row>
-          <Col>
-            <Card>
-              <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
-        <br/>
-        <Row>
-          <Col>
-            <Card>
-              <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
-        <br/>
-      </Container>
-    );
+const jsons = [
+    [{
+        "name": "Baseball",
+        "description": "Baseball in the park!",
+        "location": "Foothill Park",
+        "zipCode": "94521",
+        "state": "CA",
+        "eventTags": [
+            "baseball",
+            "sports",
+            "outdoors"
+        ],
+        "host": "sparakala",
+        "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
+    },
+    {
+        "name": "Hiking",
+        "description": "Sunny afternoon hike!",
+        "location": "Iron horse trail",
+        "zipCode": "95035",
+        "state": "CA",
+        "eventTags": [
+            "hiking",
+            "trails",
+            "outdoors"
+        ],
+        "host": "aliu",
+        "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
+    },
+    {
+        "name": "Hiking",
+        "description": "Sunny afternoon hike!",
+        "location": "Iron horse trail",
+        "zipCode": "95035",
+        "state": "CA",
+        "eventTags": [
+            "hiking",
+            "trails",
+            "outdoors"
+        ],
+        "host": "aliu",
+        "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
+    }],
+    [{
+        "name": "Hiking",
+        "description": "Sunny afternoon hike!",
+        "location": "Iron horse trail",
+        "zipCode": "95035",
+        "state": "CA",
+        "eventTags": [
+            "hiking",
+            "trails",
+            "outdoors"
+        ],
+        "host": "aliu",
+        "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
+    }]
+];
+
+class Explore extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:5000/api/getAllData')
+            .then(res => {
+                console.log(res.data.result);
+                const data = res.data.result;
+                this.setState({data});
+            }) 
+    }
+    
+    render() {
+        return (
+        <Container>
+            <h1>Explore Experiences</h1>
+            <Row>
+            <Col>
+                <InputGroup>
+                <InputGroupAddon addonType="prepend">
+                    <InputGroupText>What are you interested in?</InputGroupText>
+                </InputGroupAddon>
+                <Input />
+                </InputGroup>
+                <br/>
+            </Col>
+            </Row>
+            <div style={styles.filter}>
+            Filters
+            <br/><br/>
+            <Form>
+                <FormGroup>
+                <Label for="exampleSelect">Select</Label>
+                <Input type="select" name="select" id="exampleSelect">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </Input>
+                </FormGroup>
+                <FormGroup>
+                <Label for="exampleSelectMulti">Select Multiple</Label>
+                <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </Input>
+                </FormGroup>
+            </Form>
+            </div>
+            {this.state.data.map((json, i) => {
+                return(
+                    <Row key={i}>
+                        {json.map((item, index) => {
+                        return (
+                            <MyCard key={index}
+                                image={item.photo}
+                                title={item.name} 
+                                subtitle={item.location}
+                                text={item.description}
+                            />
+                            )
+                        })}
+                    </Row>
+                )
+            })}
+        </Container>
+        );
+    }
 };
 
 export default Explore;
